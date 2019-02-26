@@ -1,27 +1,36 @@
-# MyStore
+basicAngular
+An introduction to Angular.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+instalar o visual code, ou outra ide.
 
-## Development server
+Prerequisites: instalar o node.js: https://nodejs.org/en/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+command: npm install -g @angular/cli
 
-## Code scaffolding
+ng help
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng new my-store
 
-## Build
+Já temos uma projeto funcional. ng serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ng generate component list-product
+ng generate component edit-product
+ng generate component new-product
+ng generate component my-cart
+temos quatro componentes criados, vamos agora ajustar o routing e cria um menu.
 
-## Running unit tests
+Vamos adicionar isso: { path: 'produtos', component: ListProductComponent }
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+para os caminho que temos.
 
-## Running end-to-end tests
+e vamos adicionar isso para os caminho que não temos: { path: '**', component: PageNotFoundComponent }
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+e vamos criar o componente PageNotFoundComponent com o comando: ng generate component page-not-found.
 
-## Further help
+para finalizar o routing vamos adicionar um redirect para a home que é nossa lista de produtos: { path: '', redirectTo: '/produtos' }.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Com isso finalizamos nossas rotas.
+
+em list-product Vamos criar a lista de produtos: vai ser uma simples array.
+
+em edit-product vamos criar um outro array de produtos, criar o imput para editar o produto.
