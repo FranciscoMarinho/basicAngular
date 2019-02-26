@@ -1,4 +1,4 @@
-#basicAngular
+# basicAngular
 An introduction to Angular.
 
 instalar o visual code, ou outra ide.
