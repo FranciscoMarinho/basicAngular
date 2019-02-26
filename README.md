@@ -18,9 +18,10 @@ ng serve
 
 	ng generate component list-product
 	ng generate component edit-product
+	ng generate component new-product
 	ng generate component my-cart
 
-temos três componentes criados, vamos agora ajustar o routing e cria um menu.
+temos quatro componentes criados, vamos agora ajustar o routing e cria um menu.
 
 Vamos adicionar isso:
 { path: 'produtos', component: ListProductComponent }
