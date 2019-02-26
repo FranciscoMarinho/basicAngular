@@ -2,5 +2,5 @@
   list-product works!
 </p>
 <div style="text-align:center" *ngFor='let product of listProduct'>
-  {{product.id}}   {{product.name}}   {{product.price}}
+  <app-item-product [product] = 'product'></app-item-product>
 </div>
