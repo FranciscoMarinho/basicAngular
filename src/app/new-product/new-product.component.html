@@ -1,9 +1,11 @@
 <div class="center">
   name: <input #name >
   price: <input #price>
-  <button (click)="onClick(name.value, price.value)">Click me!</button>
+  <button (click)="onClick(name.value, price.value)">Criar novo</button>
 </div>
 
 <div class="center" *ngFor='let product of listProduct'>
-  {{product.id}}   {{product.name}}   {{product.price}}
+  <app-item-product [product] = 'product'></app-item-product> 
+  <button (click)="edit(product)">Editar</button>
+  <button (click)="remove(product)">Remover</button> 
 </div>
