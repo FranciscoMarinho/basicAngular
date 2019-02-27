@@ -1,8 +1,8 @@
-<p>
+<p class="center">
   my-cart works!
 </p>
 
-<div *ngFor='let product of listProduct'>
+<div class="center" *ngFor='let product of listProduct'>
   {{product.id}}   {{product.name}}   {{product.price}} <button (click)="onClick(product)">Click me!</button>
 </div>
-<div>total da compra: {{totalPrice}}</div>
+<div class="center">total da compra: {{totalPrice}}</div>

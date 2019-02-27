@@ -13,15 +13,20 @@ export class MyCartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.updateTotal();
+  }
+
+  updateTotal() {
+    let soma = 0;
     this.listProduct.forEach(product => {
-      this.totalPrice += product.price;
+      soma += product.price;
     })
+    this.totalPrice = soma;
   }
 
   onClick(product) {
     this.listProduct.splice(this.listProduct.indexOf(product), 1);
-
-    console.log(JSON.stringify(this.listProduct));
+    this.updateTotal();
   }
 
 }
