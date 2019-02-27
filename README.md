@@ -18,43 +18,41 @@ command:
   + ng help
   + ng new my-store
 
-Já temos uma projeto funcional. ng serve
+Já temos uma projeto funcional. 
+  + ng serve
 
-  ng generate component list-product
-  ng generate component edit-product
-  ng generate component new-product
-  ng generate component item-product
-  ng generate component my-cart
+  + ng generate component list-product
+  + ng generate component edit-product
+  + ng generate component new-product
+  + ng generate component item-product
 
-temos cinco componentes criados, vamos agora ajustar o routing e cria um menu.
+temos quatro componentes criados, vamos agora ajustar o routing e cria um menu.
 
 Vamos adicionar isso: 
-  { path: 'produtos', component: ListProductComponent }
-
+  + { path: 'produtos', component: ListProductComponent }
 para os caminho que temos.
 
 e vamos adicionar isso para os caminho que não temos: 
-  { path: '**', component: PageNotFoundComponent }
+ + { path: '**', component: PageNotFoundComponent }
 
 e vamos criar o componente PageNotFoundComponent com o comando: 
-  ng generate component page-not-found.
+ + ng generate component page-not-found.
 
 para finalizar o routing vamos adicionar um redirect para a home que é nossa lista de produtos: 
-  { path: '', redirectTo: '/produtos' }.
+ + { path: '', redirectTo: '/produtos' }.
 
 Com isso finalizamos nossas rotas.
 
 em list-product Vamos criar a lista de produtos: vai ser uma simples array.
 
 em item-product...
+Vamos usar isso aqui 
+ + @Input() product;
 
-em edit-product vamos criar um outro array de produtos, criar o imput para editar o produto.
-
-em new-product...
-em my-cart...
+em new-product vamos criar um outro array de produtos, criar o imput para criar o produto.
 
 criar o serviço para produto.
-criar o serviço para my-cart.
+ + ng generate service product
 
 fazer funcionar o edit product passando por parametro...
 
