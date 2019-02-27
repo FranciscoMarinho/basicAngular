@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService, Product } from '../product.service';
 
 @Component({
   selector: 'app-new-product',
@@ -7,16 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProductComponent implements OnInit {
 
-  listProduct = [{id: 1, name: 'coca-cola', price:'4,00'}];
-  product = {id: '', name: '', price:''};
+  listProduct = [];
 
-  constructor() { }
+  constructor(protected productService: ProductService) { }
 
   ngOnInit() {
+    this.listProduct = this.productService.getListProduct();
   }
 
-  onClick(name: string, price: string) {
-    this.listProduct.push({id: this.listProduct.length+1, name: name, price: price});
+  onClick(name: string, price: number) {
+    this.productService.addProduct(new Product(this.listProduct.length+1, name, price));
+    this.listProduct = this.productService.getListProduct();
   }
 
 }

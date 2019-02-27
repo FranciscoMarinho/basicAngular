@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-list-product',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  listProduct = [{id: '1', name: 'coca-cola', price:'4,00'}];
-  product = {id: '', name: '', price:''};
+  listProduct = [];
 
-  constructor() { }
+  constructor(protected productService: ProductService) { }
 
   ngOnInit() {
+    this.listProduct = this.productService.getListProduct();
   }
 
 }
