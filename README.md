@@ -3,7 +3,10 @@ An introduction to Angular.
 
 instalar o visual code, ou outra ide.
 
-Prerequisites: instalar o node.js: https://nodejs.org/en/
+*Prerequisites: 
+instalar o node.js: https://nodejs.org/en/
+  sudo apt-get update
+  sudo apt-get install nodejs
 
 command: 
   npm install -g @angular/cli
