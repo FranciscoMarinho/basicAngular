@@ -40,7 +40,11 @@ export class ProductService {
     this.listProduct.splice(this.listProduct.indexOf(product), DELETION_COUNT);
     localStorage.setItem(this.LIST_KEY, JSON.stringify(this.listProduct));
   }
+<<<<<<< HEAD
   getProductByID(id: number) {
+=======
+  getProductByID(id: number){
+>>>>>>> bd2e39a3fdf2329d49b133eb89493fa7279f2fbe
     this.recoverList();
     let auxProduct;
     this.listProduct.forEach(product => {
@@ -48,7 +52,11 @@ export class ProductService {
         auxProduct = product;
       }
     });
+<<<<<<< HEAD
     return auxProduct;
+=======
+    return auxProduct
+>>>>>>> bd2e39a3fdf2329d49b133eb89493fa7279f2fbe
   }
   editProduct(product: Product) {
     this.recoverList();
