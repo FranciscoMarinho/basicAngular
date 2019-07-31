@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService, Product } from '../product.service';
 
 @Component({
   selector: 'app-my-cart',
@@ -7,25 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyCartComponent implements OnInit {
 
-  listProduct = [{id: 1, name: 'coca-cola', price:4}];
+  listProduct: Product[];
   totalPrice = 0;
 
-  constructor() { }
+  constructor(protected productService: ProductService) {
+    this.listProduct = [];
+   }
 
   ngOnInit() {
     this.updateTotal();
   }
 
   updateTotal() {
+    this.listProduct = this.productService.getMyCar();
     let soma = 0;
-    this.listProduct.forEach(product => {
-      soma += product.price;
-    })
+    if (this.listProduct) {
+      this.listProduct.forEach(product => {
+        soma += product.price;
+      });
+    }
+
     this.totalPrice = soma;
   }
 
-  onClick(product) {
-    this.listProduct.splice(this.listProduct.indexOf(product), 1);
+  addToMyCar(product: Product) {
+    // this.listProduct.splice(this.listProduct.indexOf(product), 1);
+    this.productService.AddToMyCar(product);
+    this.updateTotal();
+  }
+
+  removeFromMyCar(product: Product): void {
+    this.productService.removeFromMyCar(product);
     this.updateTotal();
   }
 

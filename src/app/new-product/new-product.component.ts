@@ -9,16 +9,23 @@ import { Router } from '@angular/router';
 })
 export class NewProductComponent implements OnInit {
 
-  listProduct = [];
+  listProduct: Product[];
 
-  constructor(protected productService: ProductService, protected router: Router) { }
+  constructor(protected productService: ProductService, protected router: Router) {
+    this.listProduct = [];
+
+   }
 
   ngOnInit() {
     this.listProduct = this.productService.getListProduct();
   }
 
   onClick(name: string, price: number) {
-    this.productService.addProduct(new Product(this.listProduct.length+1, name, price));
+    let id = 0;
+    if (this.listProduct) {
+      id = this.listProduct.length + 1;
+    } 
+    this.productService.addProduct(new Product(id , name, price));
     this.listProduct = this.productService.getListProduct();
   }
   remove(product: Product) {

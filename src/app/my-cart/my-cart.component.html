@@ -1,8 +1,10 @@
 <p class="center">
-  my-cart works!
+Meu Carrinho.
 </p>
 
-<div class="center" *ngFor='let product of listProduct'>
-  {{product.id}}   {{product.name}}   {{product.price}} <button (click)="onClick(product)">Click me!</button>
+<div class="center" *ngFor='let product of this.listProduct'>
+  Id: {{product?.id}} Nome: {{product?.name}} Valor: {{product?.price}}
+  <button (click)="removeFromMyCar(product)">Remover</button>
 </div>
-<div class="center">total da compra: {{totalPrice}}</div>
+
+<div class="center">Total da compra: {{totalPrice}}</div>

@@ -1,11 +1,13 @@
 <div class="center">
-  name: <input #name >
-  price: <input #price>
-  <button (click)="onClick(name.value, price.value)">Criar novo</button>
-</div>
 
-<div class="center" *ngFor='let product of listProduct'>
-  <app-item-product [product] = 'product'></app-item-product> 
-  <button (click)="edit(product)">Editar</button>
-  <button (click)="remove(product)">Remover</button> 
+  <div class="left">Nome: <input #name ></div>
+  <div class="left" >Valor: <input #price></div>
+  <button (click)="onClick(name.value, price.value)">Criar novo</button>
+  
+  <div class="left" *ngFor='let product of this.listProduct'>
+    <app-item-product [product] = 'product'></app-item-product> 
+    <button (click)="edit(product)">Editar</button>
+    <button (click)="remove(product)">Remover</button> 
+  </div>
+
 </div>
