@@ -1,6 +1,5 @@
-<p class="center">
-  list-product works!
-</p>
-<div class="center" *ngFor='let product of listProduct'>
+
+<div class="center" *ngFor='let product of this.listProduct'>
   <app-item-product [product] = 'product'></app-item-product>
+  <button (click)="addProduct(product)" >Adicionar ao carrinho</button>
 </div>

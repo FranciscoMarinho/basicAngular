@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService, Product } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-product',
@@ -7,16 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProductComponent implements OnInit {
 
-  listProduct = [{id: 1, name: 'coca-cola', price:'4,00'}];
-  product = {id: '', name: '', price:''};
+  listProduct: Product[];
 
-  constructor() { }
+  constructor(protected productService: ProductService, protected router: Router) {
+    this.listProduct = [];
+
+   }
 
   ngOnInit() {
+    this.listProduct = this.productService.getListProduct();
   }
 
-  onClick(name: string, price: string) {
-    this.listProduct.push({id: this.listProduct.length+1, name: name, price: price});
+  onClick(name: string, price: number) {
+    let id = 0;
+    if (this.listProduct) {
+      id = this.listProduct.length + 1;
+    } 
+    this.productService.addProduct(new Product(id , name, price));
+    this.listProduct = this.productService.getListProduct();
   }
+  remove(product: Product) {
+    this.productService.removeProduct(product);
+    this.listProduct = this.productService.getListProduct();
+  }
+  edit(product: Product){
+    this.router.navigate(['editarprodutos', product.id ]);
+  } 
 
 }

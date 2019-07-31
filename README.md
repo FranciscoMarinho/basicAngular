@@ -1,58 +1,66 @@
 # basicAngular
-An introduction to Angular.
+Uma introdução ao Angular.
 
-instalar o visual code, ou outra ide.
+Instale o visual code, ou outra IDE.
 
-- Prerequisites: 
+## Pré-requisitos:
+  node.js:
+   > https://nodejs.org/en/
 
-Instalar o node.js:
- + https://nodejs.org/en/
- ou
- + sudo apt-get update
- + sudo apt-get install nodejs
+## Commandos: 
+  > npm install -g @angular/cli
 
-Instalar o angular cli:
-command: 
-  + npm install -g @angular/cli
-  
-  + ng help
-  + ng new my-store
+  > ng help
 
-Já temos uma projeto funcional. 
-  + ng serve
+  > ng new my-store
 
-  + ng generate component list-product
-  + ng generate component edit-product
-  + ng generate component new-product
-  + ng generate component item-product
+## Já temos uma projeto funcional.
+>  ng serve
 
-temos quatro componentes criados, vamos agora ajustar o routing e cria um menu.
+## Vamos criar alguns componentes.
+ > ng generate component list-product
 
-Vamos adicionar isso: 
-  + { path: 'produtos', component: ListProductComponent }
-para os caminho que temos.
+ > ng generate component edit-product
 
-e vamos adicionar isso para os caminho que não temos: 
- + { path: '**', component: PageNotFoundComponent }
+ > ng generate component new-product
 
-e vamos criar o componente PageNotFoundComponent com o comando: 
- + ng generate component page-not-found.
+ > ng generate component item-product
 
-para finalizar o routing vamos adicionar um redirect para a home que é nossa lista de produtos: 
- + { path: '', redirectTo: '/produtos' }.
+ > ng generate component my-cart
 
-Com isso finalizamos nossas rotas.
+Temos cinco componentes criados. 
+vamos agora ajustar o routing e cria um menu.
 
-em list-product Vamos criar a lista de produtos: vai ser uma simples array.
+## Vamos adicionar os caminhos: 
+> { path: 'produtos', component: ListProductComponent }
 
-em item-product...
-Vamos usar isso aqui 
- + @Input() product;
+## e para os caminho que não temos: 
+> { path: '**', component: PageNotFoundComponent }
 
-em new-product vamos criar um outro array de produtos, criar o imput para criar o produto.
+## criar o componente PageNotFoundComponent: 
+> ng generate component page-not-found.
 
-criar o serviço para produto.
- + ng generate service product
+## para finalizar o routing
+vamos adicionar um redirect para a home que vai ser uma lista de produtos: 
 
-fazer funcionar o edit product passando por parametro...
+> { path: '', redirectTo: '/produtos' }.
+
+## Com isso finalizamos nossas rotas
+
+## Vamos criar a lista de produtos
+vai ser uma simples array.
+
+## em item-product...
+
+## em edit-product 
+vamos criar um outro array de produtos.
+criar o imput para editar o produto.
+
+## em new-product...
+## em my-cart...
+
+## criar o serviço para produto.
+## criar o serviço para my-cart.
+
+## Modificar o edit product passando por parametro...
 

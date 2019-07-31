@@ -1,4 +1,10 @@
+<div class="center">
+    name: <input #name >
+    price: <input #price>
+    <button (click)="onClick(name.value, price.value)">Editar</button>
+</div>
+
 <p class="center">
-  edit-product works!
+  <app-item-product [product] = 'product'></app-item-product>
 </p>
 
