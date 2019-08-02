@@ -1,7 +1,7 @@
 <div class="center">
 
   <div class="left">Nome: <input #name ></div>
-  <div class="left" >Valor: <input #price></div>
+  <div class="left">Valor: <input #price></div>
   <button (click)="onClick(name.value, price.value)">Criar novo</button>
   
   <div class="left" *ngFor='let product of this.listProduct'>

@@ -19,7 +19,7 @@ export class ListProductComponent implements OnInit {
   }
 
   addProduct(product: Product): void{
-    this.productService.AddToMyCar(product);
+    this.productService.addToMyCar(product);
   }
 
 }
