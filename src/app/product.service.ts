@@ -24,8 +24,8 @@ export class ProductService {
 
   constructor() {  }
 
-  recoverList(key: string): Product[] {
-    const auxlistProduct = JSON.parse(localStorage.getItem(key));
+  private recoverList(key: string): Product[] {
+    const auxlistProduct:Product[] = JSON.parse(localStorage.getItem(key));
     if (auxlistProduct) {
       return auxlistProduct;
     }
@@ -46,6 +46,9 @@ export class ProductService {
 
   removeProduct(product: Product): void {
     const DELETION_COUNT = 1;
+    if (this.listProduct.length === 0) {
+      this.listProduct = this.recoverList(this.LIST_KEY);
+    }
     this.listProduct.splice(this.listProduct.indexOf(product), DELETION_COUNT);
     localStorage.setItem(this.LIST_KEY, JSON.stringify(this.listProduct));
   }
@@ -60,7 +63,6 @@ export class ProductService {
         }
       });
     }
-
     return auxProduct;
   }
 
@@ -75,13 +77,16 @@ export class ProductService {
     localStorage.setItem(this.LIST_KEY, JSON.stringify(this.listProduct));
   }
 
-  AddToMyCar(product: Product): void {
+  addToMyCar(product: Product): void {
     this.myCar.push(product);
     localStorage.setItem(this.MY_CAR_KEY, JSON.stringify(this.myCar));
   }
 
   removeFromMyCar(product: Product): void {
     const DELETION_COUNT = 1;
+    if (this.myCar.length === 0) {
+      this.myCar = this.recoverList(this.MY_CAR_KEY);
+    }
     this.myCar.splice(this.myCar.indexOf(product), DELETION_COUNT);
     localStorage.setItem(this.MY_CAR_KEY, JSON.stringify(this.myCar));
   }
