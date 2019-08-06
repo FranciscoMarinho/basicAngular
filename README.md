@@ -7,14 +7,14 @@ Instale o visual code, ou outra IDE.
   node.js:
    > https://nodejs.org/en/
 
-## Commandos: 
+## Comandos: 
   > npm install -g @angular/cli
 
   > ng help
 
   > ng new my-store
 
-## Já temos uma projeto funcional.
+## Já temos um projeto funcional.
 >  ng serve
 
 ## Vamos criar alguns componentes.
@@ -29,7 +29,7 @@ Instale o visual code, ou outra IDE.
  > ng generate component my-cart
 
 Temos cinco componentes criados. 
-vamos agora ajustar o routing e cria um menu.
+vamos agora ajustar o routing e criar um menu.
 
 ## Vamos adicionar os caminhos: 
 > { path: 'produtos', component: ListProductComponent }
@@ -54,7 +54,7 @@ vai ser uma simples array.
 
 ## em edit-product 
 vamos criar um outro array de produtos.
-criar o imput para editar o produto.
+criar o input para editar o produto.
 
 ## em new-product...
 ## em my-cart...
