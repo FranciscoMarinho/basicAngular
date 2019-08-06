@@ -46,6 +46,17 @@ vamos adicionar um redirect para a home que vai ser uma lista de produtos:
 > { path: '', redirectTo: '/produtos' }.
 
 ## Com isso finalizamos nossas rotas
+### Ela deve ficar assim:
+
+> const routes: Routes = [  
+>{ path: '', redirectTo: '/produtos', pathMatch: 'full' },  
+{ path: 'produtos', component: ListProductComponent },  
+{ path: 'novoproduto', component: NewProductComponent},  
+{ path: 'editarprodutos/:id', component: EditProductComponent },  
+{ path: 'meuCarrinho', component: MyCartComponent },  
+{ path: '**', component: PageNotFoundComponent }  
+];  
+
 
 ## Vamos criar a lista de produtos
 vai ser uma simples array.
