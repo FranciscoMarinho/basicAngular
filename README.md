@@ -17,37 +17,40 @@ Instale o visual code, ou outra IDE
 
 ## Vamos criar alguns componentes  
 `ng generate component list-product`  
-`ng generate component edit-product`
+`ng generate component edit-product`  
 `ng generate component new-product`  
 `ng generate component item-product`  
 `ng generate component my-cart`  
+
 Temos cinco componentes criados  
-vamos agora ajustar o routing e criar um menu
+agora é só ajustar o routing para criar um menu
 
 ## Vamos adicionar os caminhos:  
 `{ path: 'produtos', component: ListProductComponent }`
 
-## e para os caminho que não temos:  
+## E para os caminho que não temos:  
 `{ path: '**', component: PageNotFoundComponent }`
 
-## criar o componente PageNotFoundComponent:  
+## O componente PageNotFoundComponent é criado assim  
 `ng generate component page-not-found`
 
-## para finalizar o routing  
+## Finalizando o routing  
 vamos adicionar um redirect para a home que vai ser uma lista de produtos:  
 `{ path: '', redirectTo: '/produtos' }`
 
 ## Com isso finalizamos nossas rotas
 ### Ela deve ficar assim:
 
-```const routes: Routes = [  
->{ path: '', redirectTo: '/produtos', pathMatch: 'full' },  
+```javascript
+const routes: Routes = [  
+{ path: '', redirectTo: '/produtos', pathMatch: 'full'},  
 { path: 'produtos', component: ListProductComponent },  
 { path: 'novoproduto', component: NewProductComponent},  
 { path: 'editarprodutos/:id', component: EditProductComponent },  
 { path: 'meuCarrinho', component: MyCartComponent },  
-{ path: '**', component: PageNotFoundComponent }  
-];```  
+{ path: '**', component: PageNotFoundComponent }
+];
+```  
 
 ## Vamos criar a lista de produtos
 vai ser uma simples array.
