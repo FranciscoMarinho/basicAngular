@@ -1,8 +1,11 @@
 # basicAngular  
 Uma introdução ao Angular   
-Instale o visual code, ou outra IDE
 
-Exemplo: https://basic-angular.herokuapp.com/
+
+Exemplo: [basic-angular](https://basic-angular.herokuapp.com/)
+
+
+Instale o visual code, ou outra IDE
 
 ## Pré-requisitos:  
 [node](https://nodejs.org/en/)  
