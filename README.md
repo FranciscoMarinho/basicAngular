@@ -2,6 +2,8 @@
 Uma introdução ao Angular   
 Instale o visual code, ou outra IDE
 
+Exemplo: https://basic-angular.herokuapp.com/
+
 ## Pré-requisitos:  
 [node](https://nodejs.org/en/)  
 [npm](https://www.npmjs.com/)  
