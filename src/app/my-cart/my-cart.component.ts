@@ -23,7 +23,7 @@ export class MyCartComponent implements OnInit {
     this.listProduct = this.productService.getMyCar();
     let soma = 0;
     if (this.listProduct) {
-      this.listProduct.forEach((product:Product) => {
+      this.listProduct.forEach((product: Product) => {
         soma += Number(product.price);
       });
     }

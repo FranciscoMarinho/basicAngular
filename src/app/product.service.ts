@@ -19,19 +19,19 @@ export class ProductService {
   listProduct = [];
   readonly LIST_KEY = 'list_key';
 
-  myCar = []; 
+  myCar = [];
   readonly MY_CAR_KEY = 'my_car_key';
 
   constructor() {  }
 
   private recoverList(key: string): Product[] {
-    const auxlistProduct:Product[] = JSON.parse(localStorage.getItem(key));
+    const auxlistProduct: Product[] = JSON.parse(localStorage.getItem(key));
     if (auxlistProduct) {
       return auxlistProduct;
     }
   }
 
-  getListProduct(): Product[]{
+  getListProduct(): Product[] {
     let aux = this.recoverList(this.LIST_KEY);
     if (aux) {
       this.listProduct = aux;

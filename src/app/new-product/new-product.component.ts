@@ -24,7 +24,7 @@ export class NewProductComponent implements OnInit {
     let id = 0;
     if (this.listProduct) {
       id = this.listProduct.length + 1;
-    } 
+    }
     this.productService.addProduct(new Product(id , name, price));
     this.listProduct = this.productService.getListProduct();
   }
@@ -32,8 +32,8 @@ export class NewProductComponent implements OnInit {
     this.productService.removeProduct(product);
     this.listProduct = this.productService.getListProduct();
   }
-  edit(product: Product){
+  edit(product: Product) {
     this.router.navigate(['editarprodutos', product.id ]);
-  } 
+  }
 
 }

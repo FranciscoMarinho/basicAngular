@@ -18,7 +18,7 @@ describe('ProductService', () => {
   it('should added a product', () => {
     service.addProduct(new Product(1, 'test A', 2));
     expect(service.listProduct.length).toEqual(1);
-    
+
     service.addProduct(new Product(2, 'test B', 2));
     expect(service.listProduct.length).toEqual(2);
   });

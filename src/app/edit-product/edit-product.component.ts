@@ -13,19 +13,19 @@ export class EditProductComponent implements OnInit {
 
   product: Product;
 
-  constructor(protected ActivatedRoute: ActivatedRoute, protected productService: ProductService) { }
+  constructor(protected activatedRoute: ActivatedRoute, protected productService: ProductService) { }
 
   ngOnInit() {
-    this.ActivatedRoute.params.subscribe(params => {
-      this.id = params['id'];
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params.id;
       this.product = this.productService.getProductByID(this.id);
     });
   }
 
-  onClick(name, price) {
+  onClick(name: string, price: number) {
     this.product.name = name;
     this.product.price = price;
-    this.productService.editProduct(this.product)
+    this.productService.editProduct(this.product);;
   }
 
 }
